@@ -10,7 +10,7 @@
     <table class="table table-dark table-striped table-bordered">
       <thead>
         <tr>
-          <th>ID</th>
+          {{-- <th>ID</th>
           <th>BRAND</th>
           <th>TYPE</th>
           <th>DESCRIPTION</th>
@@ -18,7 +18,10 @@
           <th>PRICE</th>
           <th>CREATED AT</th>
           <th>UPDATED AT</th>
-          <th>LINK</th>
+          <th>LINK</th> --}}
+          @foreach ($beersArray[0] as $key => $value)
+            <th>{{ $key }}</th>
+          @endforeach
         </tr>
       </thead>
       <tbody>

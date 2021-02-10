@@ -6,6 +6,7 @@
 
 @section("content")
   <main id="show_detail">
+    
     <table class="table table-dark table-striped table-bordered">
       <thead>
         <tr>
