@@ -1,26 +1,13 @@
-{{-- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Prova</title>
-  </head>
-  <body>
-    <header>
-      <h1>Birre</h1>
-    </header>
-
-    <footer></footer>
-  </body>
-</html> --}}
-
 @extends("../layouts.layout-main")
+
+@section("title")
+  <title>Beers Table</title>
+@endsection
 
 @section("content")
   <main id=table_section>
 
-    <table class="table table-dark table-striped">
+    <table class="table table-dark table-striped table-bordered">
       <thead>
         <tr>
           <th>ID</th>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <title>Prova</title>
+    @yield("title")
   </head>
   <body>
     @include("../templates/header")
