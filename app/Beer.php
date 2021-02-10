@@ -12,5 +12,5 @@ class Beer extends Model
       "description",
       "alcohol_content",
       "price"
-    ]
+    ];
 }
