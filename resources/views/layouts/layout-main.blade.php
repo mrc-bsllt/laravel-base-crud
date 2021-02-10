@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -7,18 +7,10 @@
     <title>Prova</title>
   </head>
   <body>
-    <header>
-      <h1>Birre</h1>
-    </header>
+    @include("../templates/header")
 
-    <footer></footer>
+    @yield("content")
+
+    @include("../templates/footer")
   </body>
-</html> --}}
-
-@extends("../layouts.layout-main")
-
-@section("content")
-  <main>
-    <h2>Prova</h2>
-  </main>
-@endsection
+</html>

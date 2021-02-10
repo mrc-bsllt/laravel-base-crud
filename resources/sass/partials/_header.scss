@@ -1,0 +1,10 @@
+header {
+  height: $headerHeight;
+  background-color: $blackColor;
+  color: $brandColor;
+
+  h1 {
+    line-height: $headerHeight;
+    text-align: center;
+  }
+}
