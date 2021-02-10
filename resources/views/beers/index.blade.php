@@ -18,7 +18,6 @@
 @extends("../layouts.layout-main")
 
 @section("content")
-  <main>
-    <h2>Prova</h2>
+  <main id=table_section>
   </main>
 @endsection
