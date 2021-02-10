@@ -1,0 +1,11 @@
+#table_section,
+#show_detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - (#{$headerHeight} * 2));
+
+  table {
+    width: 60%;
+  }
+}

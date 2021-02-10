@@ -37,7 +37,7 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -48,7 +48,9 @@ class BeerController extends Controller
      */
     public function show($id)
     {
-        //
+      $beer = Beer::find($id);
+
+      return view("beers.show", compact("beer"));
     }
 
     /**

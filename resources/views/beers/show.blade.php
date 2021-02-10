@@ -1,12 +1,11 @@
 @extends("../layouts.layout-main")
 
 @section("title")
-  <title>Beers Table</title>
+  <title>Beer detail</title>
 @endsection
 
 @section("content")
-  <main id=table_section>
-
+  <main id="show_detail">
     <table class="table table-dark table-striped table-bordered">
       <thead>
         <tr>
@@ -18,11 +17,9 @@
           <th>PRICE</th>
           <th>CREATED AT</th>
           <th>UPDATED AT</th>
-          <th>LINK</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($beers as $beer)
           <tr>
             <td>{{ $beer->id }}</td>
             <td>{{ $beer->brand }}</td>
@@ -32,10 +29,9 @@
             <td>{{ $beer->price }}</td>
             <td>{{ $beer->created_at }}</td>
             <td>{{ $beer->updated_at }}</td>
-            <td><a href="{{ route('beers.show', ['beer' => $beer->id]) }}">Dettaglio</a></td>
           </tr>
-        @endforeach
       </tbody>
     </table>
+
   </main>
 @endsection
