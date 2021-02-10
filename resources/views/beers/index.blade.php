@@ -18,6 +18,7 @@
           <th>PRICE</th>
           <th>CREATED AT</th>
           <th>UPDATED AT</th>
+          <th>LINK</th>
         </tr>
       </thead>
       <tbody>
@@ -31,6 +32,7 @@
             <td>{{ $beer->price }}</td>
             <td>{{ $beer->created_at }}</td>
             <td>{{ $beer->updated_at }}</td>
+            <td><a href="#">Dettaglio</a></td>
           </tr>
         @endforeach
       </tbody>
