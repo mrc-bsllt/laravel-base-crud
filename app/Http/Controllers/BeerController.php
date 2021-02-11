@@ -37,8 +37,16 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate(
+        [
+          "brand" => "required|max:50",
+          "type" => "required|max:30",
+          "alcohol_content" => "required|max:5",
+          "price" => "required|numeric",
+        ]
+      );
       $data = $request->all();
-      // dd($data);
+
       $newBeer = new Beer();
       $newBeer->brand = $data["brand"];
       $newBeer->type = $data["type"];
@@ -48,7 +56,6 @@ class BeerController extends Controller
       $newBeer->save();
 
       return redirect()->route("beers.index", $newBeer);
-      // dd($newBeer);
 
     }
 
