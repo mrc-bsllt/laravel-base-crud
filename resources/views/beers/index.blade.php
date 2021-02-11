@@ -23,11 +23,13 @@
             @foreach ($beer as $key => $value)
               <td>{{ $key == "description" ? substr($value, 0, 15)."...": $value }}</td>
             @endforeach
-            <td><a href="{{ route('beers.show', ['beer' => $beer["id"]]) }}">Dettaglio</a></td>
+            <td><a class="btn btn-primary" href="{{ route('beers.show', ['beer' => $beer["id"]]) }}">Mostra</a></td>
           </tr>
         @endforeach
       </tbody>
-      
+
     </table>
+
+    <a class="btn btn-primary" href="{{ route("beers.create") }}">Aggiungi</a>
   </main>
 @endsection

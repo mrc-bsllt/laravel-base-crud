@@ -16,5 +16,7 @@
     @endforeach
     </table>
 
+    <a class="btn btn-secondary" href="{{ route("beers.index") }}">Indietro</a>
+
   </main>
 @endsection
