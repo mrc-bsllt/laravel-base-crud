@@ -19,7 +19,7 @@
           <th>CREATED AT</th>
           <th>UPDATED AT</th>
           <th>LINK</th> --}}
-          @foreach ($beersArray[0] as $key => $value)
+          @foreach ($beers->toArray()[0] as $key => $value)
             <th>{{ $key }}</th>
           @endforeach
         </tr>

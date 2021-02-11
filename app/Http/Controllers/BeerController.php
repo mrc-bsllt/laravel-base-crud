@@ -15,9 +15,8 @@ class BeerController extends Controller
     public function index()
     {
       $beers = Beer::all();
-      $beersArray = Beer::all()->toArray();
 
-      return view("beers.index", compact("beers", "beersArray"));
+      return view("beers.index", compact("beers"));
     }
 
     /**

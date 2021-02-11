@@ -6,18 +6,21 @@
 
 @section("content")
   <main id="show_detail">
-    
+
     <table class="table table-dark table-striped table-bordered">
       <thead>
         <tr>
-          <th>ID</th>
+          {{-- <th>ID</th>
           <th>BRAND</th>
           <th>TYPE</th>
           <th>DESCRIPTION</th>
           <th>ALCOHOL CONTENT</th>
           <th>PRICE</th>
           <th>CREATED AT</th>
-          <th>UPDATED AT</th>
+          <th>UPDATED AT</th> --}}
+          @foreach ($beer->toArray() as $key => $value)
+            <th>{{ $key }}</th>
+          @endforeach
         </tr>
       </thead>
       <tbody>
