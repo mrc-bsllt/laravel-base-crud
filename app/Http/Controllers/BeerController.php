@@ -37,6 +37,18 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
+      $data = $request->all();
+      // dd($data);
+      $newBeer = new Beer();
+      $newBeer->brand = $data["brand"];
+      $newBeer->type = $data["type"];
+      $newBeer->description = $data["description"];
+      $newBeer->alcohol_content = $data["alcohol_content"];
+      $newBeer->price = $data["price"];
+      $newBeer->save();
+
+      return redirect()->route("beers.index", $newBeer);
+      // dd($newBeer);
 
     }
 
