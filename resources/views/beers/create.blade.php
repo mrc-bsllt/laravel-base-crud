@@ -19,24 +19,24 @@
 
         <div class="form-group">
           <label for="brand">Marca della Birra</label>
-          <input type="text" class="form-control" name="brand" id="brand" placeholder="inserisci il brand">
+          <input type="text" class="form-control" name="brand" id="brand" placeholder="inserisci il brand" value="{{ old('brand') }}">
         </div>
 
         <div class="form-group">
           <label for="type">Tipo della Birra</label>
-          <input type="text" class="form-control" name="type" id="type" placeholder="inserisci il tipo">
+          <input type="text" class="form-control" name="type" id="type" placeholder="inserisci il tipo" value="{{ old('type') }}">
         </div>
 
-        <textarea name="description" rows="5" placeholder="inserisci una descrizione del prodotto"></textarea>
+        <textarea name="description" rows="5" placeholder="inserisci una descrizione del prodotto">{{ old('description') }}</textarea>
 
         <div class="form-group">
           <label for="alcohol_content">Grado alcolico</label>
-          <input type="text" class="form-control" name="alcohol_content" id="alcohol_content" placeholder="inserisci il grado alcolico con il simbolo %">
+          <input type="text" class="form-control" name="alcohol_content" id="alcohol_content" placeholder="inserisci il grado alcolico con il simbolo %" value="{{ old('alcohol_content') }}">
         </div>
 
         <div class="form-group">
           <label for="price">Prezzo</label>
-          <input type="text" class="form-control" name="price" id="price" placeholder="inserisci il prezzo">
+          <input type="text" class="form-control" name="price" id="price" placeholder="inserisci il prezzo" value="{{ old('price') }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

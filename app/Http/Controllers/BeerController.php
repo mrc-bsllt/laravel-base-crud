@@ -7,6 +7,12 @@ use App\Beer;
 
 class BeerController extends Controller
 {
+    private $validationParams = [
+      "brand" => "required|max:50",
+      "type" => "required|max:30",
+      "alcohol_content" => "required|numeric",
+      "price" => "required|numeric",
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -37,23 +43,17 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
-      $request->validate(
-        [
-          "brand" => "required|max:50",
-          "type" => "required|max:30",
-          "alcohol_content" => "required|max:5",
-          "price" => "required|numeric",
-        ]
-      );
+      $request->validate($this->validationParams);
       $data = $request->all();
 
       $newBeer = new Beer();
-      $newBeer->brand = $data["brand"];
-      $newBeer->type = $data["type"];
-      $newBeer->description = $data["description"];
-      $newBeer->alcohol_content = $data["alcohol_content"];
-      $newBeer->price = $data["price"];
-      $newBeer->save();
+      // $newBeer->brand = $data["brand"];
+      // $newBeer->type = $data["type"];
+      // $newBeer->description = $data["description"];
+      // $newBeer->alcohol_content = $data["alcohol_content"];
+      // $newBeer->price = $data["price"];
+      $newBeer->fill($data)->save();
+      //$newBeer->save();
 
       return redirect()->route("beers.index", $newBeer);
 
@@ -76,9 +76,11 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Beer $beer)
     {
-        //
+
+
+      return view("beers.edit", compact("beer"));
     }
 
     /**
@@ -88,9 +90,16 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Beer $beer)
     {
-        //
+      $request->validate($this->validationParams);
+      $data = $request->all();
+
+      $beer->update($data);
+      //dd($beer);
+
+
+      return redirect()->route("beers.index");
     }
 
     /**
@@ -99,8 +108,10 @@ class BeerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Beer $beer)
     {
-        //
+        $beer->delete();
+
+        return redirect()->route("beers.index");
     }
 }

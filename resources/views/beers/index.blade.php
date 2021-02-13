@@ -23,7 +23,16 @@
             @foreach ($beer as $key => $value)
               <td>{{ $key == "description" ? substr($value, 0, 15)."...": $value }}</td>
             @endforeach
-            <td><a class="btn btn-primary" href="{{ route('beers.show', ['beer' => $beer["id"]]) }}">Mostra</a></td>
+            <td><a class="btn btn-secondary" href="{{ route('beers.show', ['beer' => $beer["id"]]) }}"><i class="fas fa-eye"></i></a></td>
+            <td><a class="btn btn-secondary" href="{{ route('beers.edit', ['beer' => $beer["id"]]) }}"><i class="fas fa-pen"></i></a></td>
+            <td>
+              <form action="{{ route('beers.destroy', ['beer' => $beer['id']]) }}" method="post">
+                @csrf
+                @method("delete")
+
+                <button type="submit" class="btn btn-secondary"><i class="fas fa-trash-alt"></i></button>
+              </form>
+            </td>
           </tr>
         @endforeach
       </tbody>
